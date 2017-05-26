@@ -1,0 +1,22 @@
+{
+  "name": "buildfont",
+  "version": "1.0.6",
+  "description": "Converts package of svg files to a font file. Provides css and html demo.",
+  "main": "index.js",
+  "bin": {
+    "buildfont": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "shiyh2012@foxmail.com",
+  "license": "MIT",
+  "dependencies": {
+    "co": "^4.6.0",
+    "commander": "^2.9.0",
+    "svg2ttf": "^4.0.2",
+    "svgicons2svgfont": "^5.0.0",
+    "ttf2eot": "^2.0.0",
+    "ttf2woff": "^2.0.1"
+  }
+}
