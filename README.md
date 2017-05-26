@@ -21,13 +21,20 @@ Put svgs into directory ./svgs. Svgs' filename should be meaningful. Css classna
 
 Run buildfont at the parent directory of './svgs', font file and demo html/css will be generated in ./font.
 
+将svg文件放入./svgs文件夹，文件名与字体含义相同
+
+
+在./svgs的父级目录运行buildfont 即可生成 ./font文件夹，内有各种文件
+
+
 ```
 $ buildfont
 
 ```
 
+参数：
 
-将svg文件放入./svgs文件夹，文件名与字体含义相同
+buildfont -F dunhuangFont  配置font-family的名字, 默认是iconfont
 
+buildfont -s ~/svgs/ 配置svgs的文件夹路径, 默认'./svgs'
 
-在./svgs的父级目录运行buildfont 即可生成 ./font文件夹，内有各种文件
