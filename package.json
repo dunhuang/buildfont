@@ -1,10 +1,14 @@
 {
   "name": "buildfont",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Converts package of svg files to a font file. Provides css and html demo.",
   "main": "index.js",
   "bin": {
     "buildfont": "./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dunhuang/buildfont.git"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
