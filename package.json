@@ -1,6 +1,6 @@
 {
   "name": "buildfont",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Converts package of svg files to a font file. Provides css and html demo.",
   "main": "index.js",
   "bin": {
