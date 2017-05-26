@@ -4,9 +4,9 @@
 
 Convert several svg files to one single font file formatted as .ttf, .svg, .woff.
 
-Demo html and css are also generated.
+Demo html , css and map json files are also generated. Easy to be integrated in web or react native environment.
 
-自动合并svg文件，生成.ttf, .svg, .woff, .eot多种字体文件，并同时生成css和html
+自动合并svg文件，生成.ttf, .svg, .woff, .eot多种字体文件，并同时生成css、html和map文件，方便用于web和react-native(如react-native-vector-icons)等多种场合。
 
 ## install
 
@@ -29,12 +29,18 @@ Run buildfont at the parent directory of './svgs', font file and demo html/css w
 
 ```
 $ buildfont
-
 ```
 
-参数：
+### 参数：
 
-buildfont -F dunhuangFont  配置font-family的名字, 默认是iconfont
+-F, 配置font-family的名字, 默认是iconfont
 
-buildfont -s ~/svgs/ 配置svgs的文件夹路径, 默认'./svgs'
+```
+$ buildfont -F dunhuangFont  
+```
+-s 配置svgs的文件夹路径, 默认'./svgs'
 
+```
+buildfont -s ~/svgs/ 
+```
+ 
