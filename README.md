@@ -2,7 +2,7 @@
 # buildfont
 
 
-Convert several svg files to one single font file formatted as .ttf, .svg, .woff.
+Convert several svg files to one single font file formatted as .ttf, .svg, .woff, eot.
 
 Demo html , css and map json files are also generated. Easy to be integrated in web or react native environment.
 
@@ -43,4 +43,3 @@ $ buildfont -F dunhuangFont
 ```
 buildfont -s ~/svgs/ 
 ```
- 
