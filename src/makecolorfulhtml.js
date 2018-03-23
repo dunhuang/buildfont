@@ -1,0 +1,40 @@
+module.exports = function(fontname, svgs) {
+  var html = '<!doctype html>\n';
+  html += '<html lang="cn" style="font-size:16px">\n';
+  html += '<head>\n';
+  html += '  <meta charset="UTF-8" />\n';
+  html += '  <title>Document</title>\n';
+  html += '  <style>ul,li{margin:0;padding:0;list-style:none}i{font-style:normal;} .wrap{width:980px;margin: 100px auto 0;} li>i {float: left;font-size: 30px;}ul li{width:228px;line-height:32px;padding:10px 0 8px 16px;float: left;border:1px solid #eee;margin:-1px 0 0 -1px;} li svg{font-size:42px;}</style>\n';
+  html += '  <script src="iconsvg.js"></script>\n';
+  html += '  <style>\n';
+  html += '  .icon {\n';
+  html += '  /* 通过设置 font-size 来改变图标大小 */\n';
+  html += '  width: 1em; height: 1em;\n';
+  html += '  /* 图标和文字相邻时，垂直对齐 */\n';
+  html += '  vertical-align: -0.15em;\n';
+  html += '  /* 通过设置 color 来改变 SVG 的颜色/fill **/\n';
+  html += '  fill: currentColor;\n';
+  html += '  /* path 和 stroke 溢出 viewBox 部分在 IE 下会显示\n';
+  html += '       normalize.css 中也包含这行 */\n';
+  html += '    overflow: hidden;\n';
+  html += '  }\n';
+  html += '</style>\n';
+  html += '</head>\n';
+  html += '<body>\n';
+  html += '<!--请使用浏览器中打开-->\n';
+  html += '  <div class="wrap">\n';
+  html += '    <ul>\n';
+  svgs.forEach(function(svg){
+    html += '      <li>\n';
+    html += '        <svg class="icon" aria-hidden="true">\n';
+    html += '           <use xlink:href="#icon-'+svg.replace(/\.svg$/,'')+'"></use>\n';
+    html += '        </svg>\n';
+    html += '        <div class="fontclass">#icon-'+svg.replace(/\.svg$/,'')+'</div>\n'
+    html += '      </li>\n';
+  });
+  html += '    </ul>\n';
+  html += '  </div>\n';
+  html += '</body>\n';
+  html += '</html>\n';
+  return html;
+};

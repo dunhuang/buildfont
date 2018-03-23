@@ -1,5 +1,6 @@
 module.exports={
   svgdir: './svgs',
-  fontdir: './font',
+  svgicondir: './svgsymbol',
+  fontdir: './iconfont',
   fontname: 'iconfont'
 }

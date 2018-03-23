@@ -6,7 +6,11 @@ Convert several svg files to one single font file formatted as .ttf, .svg, .woff
 
 Demo html , css and map json files are also generated. Easy to be integrated in web or react native environment.
 
+Supports colorful svg fonts. (svg sprites)
+
 自动合并svg文件，生成.ttf, .svg, .woff, .eot多种字体文件，并同时生成css、html和map文件，方便用于web和react-native(如react-native-vector-icons)等多种场合。
+
+支持合成svg sprites形式的多色图标。
 
 ## install
 
@@ -38,8 +42,73 @@ $ buildfont
 ```
 $ buildfont -F dunhuangFont  
 ```
--s 配置svgs的文件夹路径, 默认'./svgs'
+-p 配置svgs的文件夹路径, 默认'./svgs'
 
 ```
-buildfont -s ~/svgs/ 
+buildfont -p ~/svgs/ 
 ```
+
+### example
+
+```
+cd example
+
+```
+build font icons 生成单色字体图标
+
+```
+buildfont
+
+```
+
+
+build colorful svg icons 生成多色svg图标（svg sprites)
+
+```
+buildfont -p ./examples/csvgs -c
+
+```
+
+在react中使用svg sprites：
+```
+import React, {Component} from 'react'
+import getSvg from './svgsymbol/svgsymbol_cjs';
+
+class ReactSvg extends Component {
+  render () {
+    const {svg} = this.props
+    return (
+      <div dangerouslySetInnerHTML={{__html: svg}} style={{display:'none'}}/>
+    )
+  }
+}
+
+const defaultStyle = {
+  width: '1em',
+  height: '1em',
+  verticalAlign: '-0.15em',
+  fill: 'currentColor',
+  overflow: 'hidden'
+}
+class IconSvg extends Component {
+  render () {
+    const {name, style = {}, className = ''} = this.props
+    return (
+      <svg className={className} style={Object.assign({}, defaultStyle,style)} aria-hidden="true">
+        <use xlinkHref={'#icon-' + name}></use>
+      </svg>
+    )
+  }
+}
+
+
+const App = () => (
+  <div>
+    <ReactSvg svg={getSvg()}/>
+    <p style={{fontSize: 20}}><IconSvg name="design"/></p>
+    <p style={{fontSize: 20}}><IconSvg name="football"/></p>
+    <p style={{fontSize: 20}}><IconSvg name="reading"/></p>
+  </div>
+);
+```
+
