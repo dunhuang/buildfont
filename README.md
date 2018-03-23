@@ -48,10 +48,12 @@ $ buildfont -F dunhuangFont
 buildfont -p ~/svgs/ 
 ```
 
+-c 生成多色图标，也就是svg sprites图标
+
 ### example
 
 ```
-cd example
+cd examples
 
 ```
 build font icons 生成单色字体图标
